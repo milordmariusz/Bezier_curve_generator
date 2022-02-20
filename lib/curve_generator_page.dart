@@ -27,18 +27,14 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
         backgroundColor: Colors.pinkAccent,
         body: Stack(
           children: [
-            ClipPath(
-              clipper: WaveClipper(isShadow:true),
-              child: Container(
-
-                color: Colors.black.withOpacity(0.6),
-                height: (MediaQuery.of(context).size.height) -
-                    MediaQuery.of(context).size.height / 5 +
-                    60,
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
               ),
-            ),
-            ClipPath(
-              clipper: WaveClipper(isShadow:false),
+              clipper: WaveClipper(isShadow: false),
               child: Container(
                 color: Colors.orangeAccent,
                 height: (MediaQuery.of(context).size.height) -
@@ -47,16 +43,19 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
             ),
             ClipPath(
-              clipper: WaveClipper(isShadow:true),
+              clipper: WaveClipper(isShadow: true),
               child: Container(
-                color: Colors.black.withOpacity(0.6),
-                height: (MediaQuery.of(context).size.height) -
-                    MediaQuery.of(context).size.height / 5 * 2 +
-                    60,
+                color: Colors.transparent,
               ),
             ),
-            ClipPath(
-              clipper: WaveClipper(isShadow:false),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
+              ),
+              clipper: WaveClipper(isShadow: false),
               child: Container(
                 color: Colors.blue,
                 height: (MediaQuery.of(context).size.height) -
@@ -65,16 +64,19 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
             ),
             ClipPath(
-              clipper: WaveClipper(isShadow:true),
+              clipper: WaveClipper(isShadow: true),
               child: Container(
-                color: Colors.black.withOpacity(0.6),
-                height: (MediaQuery.of(context).size.height) -
-                    MediaQuery.of(context).size.height / 5 * 3+
-                    60,
+                color: Colors.transparent,
               ),
             ),
-            ClipPath(
-              clipper: WaveClipper(isShadow:false),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
+              ),
+              clipper: WaveClipper(isShadow: false),
               child: Container(
                 color: Colors.green,
                 height: (MediaQuery.of(context).size.height) -
@@ -83,16 +85,19 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
             ),
             ClipPath(
-              clipper: WaveClipper(isShadow:true),
+              clipper: WaveClipper(isShadow: true),
               child: Container(
-                color: Colors.black.withOpacity(0.6),
-                height: (MediaQuery.of(context).size.height) -
-                    MediaQuery.of(context).size.height / 5 * 4+
-                    60,
+                color: Colors.transparent,
               ),
             ),
-            ClipPath(
-              clipper: WaveClipper(isShadow:false),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
+              ),
+              clipper: WaveClipper(isShadow: false),
               child: Container(
                 color: Colors.yellow,
                 height: (MediaQuery.of(context).size.height) -
@@ -101,7 +106,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {});
               },
             ),
@@ -112,6 +117,59 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
   }
 }
 
+@immutable
+class ClipShadowPath extends StatelessWidget {
+  final BoxShadow shadow;
+
+  final CustomClipper<Path> clipper;
+
+  final Widget child;
+
+  const ClipShadowPath({
+    Key? key,
+    required this.shadow,
+    required this.clipper,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _ClipShadowShadowPainter(
+        clipper: clipper,
+        shadow: shadow,
+      ),
+      child: ClipPath(child: child, clipper: clipper),
+    );
+  }
+}
+
+class _ClipShadowShadowPainter extends CustomPainter {
+  final BoxShadow shadow;
+
+  final CustomClipper<Path> clipper;
+
+  _ClipShadowShadowPainter({required this.shadow, required this.clipper});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = shadow.toPaint()
+      ..maskFilter = MaskFilter.blur(
+        BlurStyle.normal,
+        shadow.spreadRadius,
+      );
+
+    var clipPath = clipper.getClip(size).shift(shadow.offset);
+
+    canvas.drawPath(clipPath, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
+  }
+}
+
 class WaveClipper extends CustomClipper<Path> {
   WaveClipper({required this.isShadow});
 
@@ -119,17 +177,15 @@ class WaveClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    if(isShadow) {
+    if (isShadow) {
       curveDataMaker();
     }
     debugPrint(size.width.toString());
     var path = Path();
     path.lineTo(0, size.height - curveData1);
-    var firstCurve = Offset(size.width / curveData2,
-        size.height - curveData3);
+    var firstCurve = Offset(size.width / curveData2, size.height - curveData3);
     var secondCurve = Offset(
-        size.width - (size.width / curveData4),
-        size.height - curveData5);
+        size.width - (size.width / curveData4), size.height - curveData5);
     var pathEnd = Offset(size.width, size.height - curveData6);
     path.cubicTo(firstCurve.dx, firstCurve.dy, secondCurve.dx, secondCurve.dy,
         pathEnd.dx, pathEnd.dy);
@@ -138,7 +194,7 @@ class WaveClipper extends CustomClipper<Path> {
     return path;
   }
 
-  void curveDataMaker(){
+  void curveDataMaker() {
     curveData1 = doubleInRange(rng, 5, 200);
     curveData2 = doubleInRange(rng, 3, 8);
     curveData3 = doubleInRange(rng, 0, 100);
