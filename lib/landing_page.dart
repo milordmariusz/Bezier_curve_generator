@@ -1,3 +1,4 @@
+import 'package:bezier_curve_generator/color_page.dart';
 import 'package:bezier_curve_generator/curve_generator_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class LandingPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const CurveGeneratorPage()),
+                    MaterialPageRoute(builder: (context) => ColorPage()),
                   );
                 },
               ),
