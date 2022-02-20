@@ -12,20 +12,12 @@ class LandingPage extends StatelessWidget {
         body: Stack(
           children: [
             ClipPath(
-                clipper: WaveClipper(),
-                child: Container(
-                  color: Colors.deepOrangeAccent,
-                  height: 400,
-                ),
+              clipper: WaveClipper(),
+              child: Container(
+                color: Colors.deepOrangeAccent,
+                height: 400,
+              ),
             ),
-            ClipPath(
-                clipper: WaveClipper(),
-                child: Container(
-                  color: Colors.green,
-                  height: 200,
-                ),
-            ),
-
           ],
         ),
       ),
@@ -59,6 +51,6 @@ class WaveClipper extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    throw UnimplementedError();
+    return true;
   }
 }
