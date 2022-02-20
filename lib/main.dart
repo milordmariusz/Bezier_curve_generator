@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'landing_page.dart';
+import 'curve_generator_page.dart';
 
 void main()async{
 
