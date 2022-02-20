@@ -3,8 +3,14 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LandingPage extends StatelessWidget {
-  late Path ultimate;
+class CurveGeneratorPage extends StatefulWidget {
+  const CurveGeneratorPage({Key? key}) : super(key: key);
+
+  @override
+  _CurveGenerator createState() => _CurveGenerator();
+}
+
+class _CurveGenerator extends State<CurveGeneratorPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,6 +54,11 @@ class LandingPage extends StatelessWidget {
                     50,
               ),
             ),
+            GestureDetector(
+              onTap: (){
+                setState(() {});
+              },
+            ),
           ],
         ),
       ),
@@ -60,12 +71,12 @@ class WaveClipper extends CustomClipper<Path> {
 
   bool isShadow;
 
-  @override
   var rng = Random();
 
+  @override
   Path getClip(Size size) {
     debugPrint(size.width.toString());
-    var path = new Path();
+    var path = Path();
     path.lineTo(0, size.height - doubleInRange(rng, 5, 200));
     var firstCurve = Offset(size.width / doubleInRange(rng, 3, 8),
         size.height - doubleInRange(rng, 0, 100));
