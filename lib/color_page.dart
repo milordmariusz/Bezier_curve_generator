@@ -40,8 +40,8 @@ class _ColorPageState extends State<ColorPage> {
       ),
       Center(
         child: Container(
-          height: size.height - 80,
-          width: size.width - 50,
+          height: size.height - 50,
+          width: 350,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15.0),
@@ -51,222 +51,223 @@ class _ColorPageState extends State<ColorPage> {
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(height: 40),
+          SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color1,
                 ),
-                width: 110,
-                height: 110,
+                width: 90,
+                height: 90,
               ),
+              SizedBox(width: 50),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.buttonColor,
-                  onPrimary: Colors.white,
-                ),
-                child: Text(
-                  'Pick Color',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                  style: ElevatedButton.styleFrom(
+                    primary: AppColors.buttonColor,
+                    onPrimary: Colors.white,
                   ),
-                ),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                          title: Text('Pick Your Color'),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ColorPicker(
-                                  pickerColor: color1,
-                                  onColorChanged: (color) =>
-                                      setState(() => color1 = color)),
-                              TextButton(
-                                child: const Text(
-                                  'SELECT',
-                                  style: TextStyle(fontSize: 20),
+                  child: Text(
+                    'Pick Color',
+                    style: GoogleFonts.nunito(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text('Pick Your Color'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ColorPicker(
+                                    pickerColor: color1,
+                                    onColorChanged: (color) =>
+                                        setState(() => color1 = color)),
+                                TextButton(
+                                  child: const Text(
+                                    'SELECT',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () => Navigator.of(context).pop(),
                                 ),
-                                onPressed: () => Navigator.of(context).pop(),
-                              ),
-                            ],
-                          ));
-                    },
-                  );
-                }
-              ),
+                              ],
+                            ));
+                      },
+                    );
+                  }),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color2,
                 ),
-                width: 110,
-                height: 110,
+                width: 90,
+                height: 90,
               ),
+              SizedBox(width: 50),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.buttonColor,
-                  onPrimary: Colors.white,
-                ),
-                child: Text(
-                  'Pick Color',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                  style: ElevatedButton.styleFrom(
+                    primary: AppColors.buttonColor,
+                    onPrimary: Colors.white,
                   ),
-                ),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                          title: Text('Pick Your Color'),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ColorPicker(
-                                  pickerColor: color2,
-                                  onColorChanged: (color) =>
-                                      setState(() => color2 = color)),
-                              TextButton(
-                                child: const Text(
-                                  'SELECT',
-                                  style: TextStyle(fontSize: 20),
+                  child: Text(
+                    'Pick Color',
+                    style: GoogleFonts.nunito(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text('Pick Your Color'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ColorPicker(
+                                    pickerColor: color2,
+                                    onColorChanged: (color) =>
+                                        setState(() => color2 = color)),
+                                TextButton(
+                                  child: const Text(
+                                    'SELECT',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () => Navigator.of(context).pop(),
                                 ),
-                                onPressed: () => Navigator.of(context).pop(),
-                              ),
-                            ],
-                          ));
-                    },
-                  );
-                }
-              ),
+                              ],
+                            ));
+                      },
+                    );
+                  }),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color3,
                 ),
-                width: 110,
-                height: 110,
+                width: 90,
+                height: 90,
               ),
+              SizedBox(width: 50),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.buttonColor,
-                  onPrimary: Colors.white,
-                ),
-                child: Text(
-                  'Pick Color',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                  style: ElevatedButton.styleFrom(
+                    primary: AppColors.buttonColor,
+                    onPrimary: Colors.white,
                   ),
-                ),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                          title: Text('Pick Your Color'),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ColorPicker(
-                                  pickerColor: color3,
-                                  onColorChanged: (color) =>
-                                      setState(() => color3 = color)),
-                              TextButton(
-                                child: const Text(
-                                  'SELECT',
-                                  style: TextStyle(fontSize: 20),
+                  child: Text(
+                    'Pick Color',
+                    style: GoogleFonts.nunito(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text('Pick Your Color'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ColorPicker(
+                                    pickerColor: color3,
+                                    onColorChanged: (color) =>
+                                        setState(() => color3 = color)),
+                                TextButton(
+                                  child: const Text(
+                                    'SELECT',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () => Navigator.of(context).pop(),
                                 ),
-                                onPressed: () => Navigator.of(context).pop(),
-                              ),
-                            ],
-                          ));
-                    },
-                  );
-                }
-              ),
+                              ],
+                            ));
+                      },
+                    );
+                  }),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color4,
                 ),
-                width: 110,
-                height: 110,
+                width: 90,
+                height: 90,
               ),
+              SizedBox(width: 50),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.buttonColor,
-                  onPrimary: Colors.white,
-                ),
-                child: Text(
-                  'Pick Color',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+                  style: ElevatedButton.styleFrom(
+                    primary: AppColors.buttonColor,
+                    onPrimary: Colors.white,
                   ),
-                ),
-                onPressed: (){
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                          title: Text('Pick Your Color'),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ColorPicker(
-                                  pickerColor: color4,
-                                  onColorChanged: (color) =>
-                                      setState(() => color4 = color)),
-                              TextButton(
-                                child: const Text(
-                                  'SELECT',
-                                  style: TextStyle(fontSize: 20),
+                  child: Text(
+                    'Pick Color',
+                    style: GoogleFonts.nunito(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text('Pick Your Color'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ColorPicker(
+                                    pickerColor: color4,
+                                    onColorChanged: (color) =>
+                                        setState(() => color4 = color)),
+                                TextButton(
+                                  child: const Text(
+                                    'SELECT',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  onPressed: () => Navigator.of(context).pop(),
                                 ),
-                                onPressed: () => Navigator.of(context).pop(),
-                              ),
-                            ],
-                          ));
-                    },
-                  );
-                }
-              ),
+                              ],
+                            ));
+                      },
+                    );
+                  }),
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: color5,
                 ),
-                width: 110,
-                height: 110,
+                width: 90,
+                height: 90,
               ),
+              SizedBox(width: 50),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: AppColors.buttonColor,
@@ -306,7 +307,37 @@ class _ColorPageState extends State<ColorPage> {
                   }),
             ],
           ),
-          SizedBox(height: 40),
+          SizedBox(
+            width: 280,
+            height: 60,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: AppColors.buttonColor,
+                onPrimary: Colors.white,
+              ),
+              child: Text(
+                'Generate painting',
+                style: GoogleFonts.nunito(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CurveGeneratorPage(
+                            color1: color1,
+                            color2: color2,
+                            color3: color3,
+                            color4: color4,
+                            color5: color5,
+                          )),
+                );
+              },
+            ),
+          ),
+          SizedBox(height: 20),
         ],
       ),
     ]);

@@ -12,19 +12,31 @@ double curveData5 = 0;
 double curveData6 = 0;
 
 class CurveGeneratorPage extends StatefulWidget {
-  const CurveGeneratorPage({Key? key}) : super(key: key);
+  CurveGeneratorPage({
+    required this.color1,
+    required this.color2,
+    required this.color3,
+    required this.color4,
+    required this.color5,
+  });
+
+  Color color1;
+  Color color2;
+  Color color3;
+  Color color4;
+  Color color5;
 
   @override
   _CurveGenerator createState() => _CurveGenerator();
 }
 
 class _CurveGenerator extends State<CurveGeneratorPage> {
-  late CustomClipper<Path>? list;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: widget.color1,
         body: Stack(
           children: [
             ClipShadowPath(
@@ -36,7 +48,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
               clipper: WaveClipper(isShadow: false),
               child: Container(
-                color: Colors.orangeAccent,
+                color: widget.color2,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 +
                     50,
@@ -57,7 +69,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
               clipper: WaveClipper(isShadow: false),
               child: Container(
-                color: Colors.blue,
+                color: widget.color3,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 2 +
                     50,
@@ -78,7 +90,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
               clipper: WaveClipper(isShadow: false),
               child: Container(
-                color: Colors.green,
+                color: widget.color4,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 3 +
                     50,
@@ -99,7 +111,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               ),
               clipper: WaveClipper(isShadow: false),
               child: Container(
-                color: Colors.yellow,
+                color: widget.color5,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 4 +
                     50,
