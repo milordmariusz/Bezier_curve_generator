@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:bezier_curve_generator/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,7 +58,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       Align(
-        alignment: Alignment(-0.75, -0.60),
+        alignment: const Alignment(-0.75, -0.60),
         child: Text(
           "Bezier",
           style: GoogleFonts.raleway(
@@ -73,7 +70,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       Align(
-        alignment: Alignment(0.75, -0.30),
+        alignment: const Alignment(0.75, -0.30),
         child: Text(
           "Curve",
           style: GoogleFonts.raleway(
@@ -85,7 +82,7 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       Align(
-        alignment: Alignment(-0.75, 0.01),
+        alignment: const Alignment(-0.75, 0.01),
         child: Text(
           "Generator",
           style: GoogleFonts.raleway(
@@ -102,14 +99,14 @@ class _LandingPageState extends State<LandingPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 400),
-            Container(
+            SizedBox(
                 height: 200,
                 width: 200,
                 child: NeumorphicButton(
-                  margin: EdgeInsets.only(top: 12),
+                  margin: const EdgeInsets.only(top: 12),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ColorPage()));
+                        MaterialPageRoute(builder: (context) => const ColorPage()));
                   },
                   style: NeumorphicStyle(
                     color: AppColors.whiteBackground,
@@ -118,7 +115,6 @@ class _LandingPageState extends State<LandingPage> {
                     intensity: 1,
                     boxShape:
                         NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
-                    //border: NeumorphicBorder()
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

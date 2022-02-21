@@ -12,13 +12,13 @@ double curveData5 = 0;
 double curveData6 = 0;
 
 class CurveGeneratorPage extends StatefulWidget {
-  CurveGeneratorPage({
+  CurveGeneratorPage({Key? key,
     required this.color1,
     required this.color2,
     required this.color3,
     required this.color4,
     required this.color5,
-  });
+  }) : super(key: key);
 
   Color color1;
   Color color2;
@@ -31,6 +31,13 @@ class CurveGeneratorPage extends StatefulWidget {
 }
 
 class _CurveGenerator extends State<CurveGeneratorPage> {
+
+  @override
+  void initState() {
+    WaveClipper wc = WaveClipper(isShadow: false);
+    wc.curveDataMaker();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

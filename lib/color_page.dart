@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class ColorPage extends StatefulWidget {
-  ColorPage({Key? key}) : super(key: key);
+  const ColorPage({Key? key}) : super(key: key);
 
   @override
   _ColorPageState createState() => _ColorPageState();
@@ -59,25 +59,25 @@ class _ColorPageState extends State<ColorPage> {
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Neumorphic(
                 style: NeumorphicStyle(
                   color: color1,
-                  boxShape: NeumorphicBoxShape.circle(),
+                  boxShape: const NeumorphicBoxShape.circle(),
                   intensity: 1,
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: Container(
+                child: const SizedBox(
                   width: 90,
                   height: 90,
                 ),
               ),
-              SizedBox(width: 50),
-              Container(
+              const SizedBox(width: 50),
+              SizedBox(
                 height: 55,
                 width: 175,
                 child: NeumorphicButton(
@@ -86,7 +86,7 @@ class _ColorPageState extends State<ColorPage> {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                            title: Text('Pick Your Color'),
+                            title: const Text('Pick Your Color'),
                             content: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -114,7 +114,6 @@ class _ColorPageState extends State<ColorPage> {
                     intensity: 1,
                     boxShape:
                         NeumorphicBoxShape.roundRect(BorderRadius.circular(30)),
-                    //border: NeumorphicBorder()
                   ),
                   child: Center(
                     child: Text(
@@ -124,7 +123,7 @@ class _ColorPageState extends State<ColorPage> {
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         shadows: <Shadow>[
-                          Shadow(
+                          const Shadow(
                             offset: Offset(0.0, 0.0),
                             blurRadius: 2.0,
                             color: Color.fromARGB(255, 0, 0, 0),
@@ -143,18 +142,18 @@ class _ColorPageState extends State<ColorPage> {
               Neumorphic(
                 style: NeumorphicStyle(
                   color: color2,
-                  boxShape: NeumorphicBoxShape.circle(),
+                  boxShape: const NeumorphicBoxShape.circle(),
                   intensity: 1,
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: Container(
+                child: const SizedBox(
                   width: 90,
                   height: 90,
                 ),
               ),
-              SizedBox(width: 50),
-              Container(
+              const SizedBox(width: 50),
+              SizedBox(
                   height: 55,
                   width: 175,
                   child: NeumorphicButton(
@@ -163,7 +162,7 @@ class _ColorPageState extends State<ColorPage> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                              title: Text('Pick Your Color'),
+                              title: const Text('Pick Your Color'),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -192,7 +191,6 @@ class _ColorPageState extends State<ColorPage> {
                       shape: NeumorphicShape.flat,
                       boxShape: NeumorphicBoxShape.roundRect(
                           BorderRadius.circular(30)),
-                      //border: NeumorphicBorder()
                     ),
                     child: Center(
                       child: Text(
@@ -202,7 +200,7 @@ class _ColorPageState extends State<ColorPage> {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
-                            Shadow(
+                            const Shadow(
                               offset: Offset(0.0, 0.0),
                               blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -220,18 +218,18 @@ class _ColorPageState extends State<ColorPage> {
               Neumorphic(
                 style: NeumorphicStyle(
                   color: color3,
-                  boxShape: NeumorphicBoxShape.circle(),
+                  boxShape: const NeumorphicBoxShape.circle(),
                   intensity: 1,
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: Container(
+                child: const SizedBox(
                   width: 90,
                   height: 90,
                 ),
               ),
-              SizedBox(width: 50),
-              Container(
+              const SizedBox(width: 50),
+              SizedBox(
                   height: 55,
                   width: 175,
                   child: NeumorphicButton(
@@ -240,7 +238,7 @@ class _ColorPageState extends State<ColorPage> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                              title: Text('Pick Your Color'),
+                              title: const Text('Pick Your Color'),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -278,7 +276,7 @@ class _ColorPageState extends State<ColorPage> {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
-                            Shadow(
+                            const Shadow(
                               offset: Offset(0.0, 0.0),
                               blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -296,18 +294,18 @@ class _ColorPageState extends State<ColorPage> {
               Neumorphic(
                 style: NeumorphicStyle(
                   color: color4,
-                  boxShape: NeumorphicBoxShape.circle(),
+                  boxShape: const NeumorphicBoxShape.circle(),
                   intensity: 1,
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: Container(
+                child: const SizedBox(
                   width: 90,
                   height: 90,
                 ),
               ),
-              SizedBox(width: 50),
-              Container(
+              const SizedBox(width: 50),
+              SizedBox(
                   height: 55,
                   width: 175,
                   child: NeumorphicButton(
@@ -316,7 +314,7 @@ class _ColorPageState extends State<ColorPage> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                              title: Text('Pick Your Color'),
+                              title: const Text('Pick Your Color'),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -355,7 +353,7 @@ class _ColorPageState extends State<ColorPage> {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
-                            Shadow(
+                            const Shadow(
                               offset: Offset(0.0, 0.0),
                               blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -373,18 +371,18 @@ class _ColorPageState extends State<ColorPage> {
               Neumorphic(
                 style: NeumorphicStyle(
                   color: color5,
-                  boxShape: NeumorphicBoxShape.circle(),
+                  boxShape: const NeumorphicBoxShape.circle(),
                   intensity: 1,
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: Container(
+                child: const SizedBox(
                   width: 90,
                   height: 90,
                 ),
               ),
-              SizedBox(width: 50),
-              Container(
+              const SizedBox(width: 50),
+              SizedBox(
                   height: 55,
                   width: 175,
                   child: NeumorphicButton(
@@ -393,7 +391,7 @@ class _ColorPageState extends State<ColorPage> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                              title: Text('Pick Your Color'),
+                              title: const Text('Pick Your Color'),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
@@ -432,7 +430,7 @@ class _ColorPageState extends State<ColorPage> {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
-                            Shadow(
+                            const Shadow(
                               offset: Offset(0.0, 0.0),
                               blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -445,7 +443,7 @@ class _ColorPageState extends State<ColorPage> {
                   )),
             ],
           ),
-          Container(
+          SizedBox(
               height: 60,
               width: 250,
               child: NeumorphicButton(
@@ -478,7 +476,7 @@ class _ColorPageState extends State<ColorPage> {
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
                       shadows: <Shadow>[
-                        Shadow(
+                        const Shadow(
                           offset: Offset(0.0, 0.0),
                           blurRadius: 2.0,
                           color: Color.fromARGB(255, 0, 0, 0),
@@ -488,7 +486,7 @@ class _ColorPageState extends State<ColorPage> {
                   ),
                 ),
               )),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     ]);
