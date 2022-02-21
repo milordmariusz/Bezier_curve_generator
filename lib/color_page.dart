@@ -122,7 +122,14 @@ class _ColorPageState extends State<ColorPage> {
                         style: GoogleFonts.archivoBlack(//customize depth here
                           color: color1,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,//customize color here
+                          fontWeight: FontWeight.bold,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0.0, 0.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ],//customize color here
                         ),// AND others usual text style properties (fontFamily, fontWeight, ...)
                         ),
                       ),
@@ -192,7 +199,14 @@ class _ColorPageState extends State<ColorPage> {
                         style: GoogleFonts.archivoBlack(//customize depth here
                           color: color2,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,//customize color here
+                          fontWeight: FontWeight.bold,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0.0, 0.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ],//customize color here
                         ),// AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
@@ -261,7 +275,14 @@ class _ColorPageState extends State<ColorPage> {
                         style: GoogleFonts.archivoBlack(//customize depth here
                           color: color3,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,//customize color here
+                          fontWeight: FontWeight.bold,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0.0, 0.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ],//customize color here
                         ),// AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
@@ -330,7 +351,14 @@ class _ColorPageState extends State<ColorPage> {
                         style: GoogleFonts.archivoBlack(//customize depth here
                           color: color4,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,//customize color here
+                          fontWeight: FontWeight.bold,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0.0, 0.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ],//customize color here
                         ),// AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
@@ -399,7 +427,15 @@ class _ColorPageState extends State<ColorPage> {
                         style: GoogleFonts.archivoBlack(//customize depth here
                           color: color5,
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,//customize color here
+                          fontWeight: FontWeight.bold,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(0.0, 0.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ],
+                          //customize color here
                         ),// AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
@@ -437,7 +473,14 @@ class _ColorPageState extends State<ColorPage> {
                     style: GoogleFonts.archivoBlack(//customize depth here
                       color: Colors.white,
                       fontSize: 40,
-                      fontWeight: FontWeight.bold,//customize color here
+                      fontWeight: FontWeight.bold,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(0.0, 0.0),
+                          blurRadius: 3.0,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ],//customize color here
                     ),
                   ),
                 ),
