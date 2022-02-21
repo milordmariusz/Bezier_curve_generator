@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bezier_curve_generator">
    <application
-        android:label="bezier_curve_generator"
+        android:label="Bezier Curve Generator"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

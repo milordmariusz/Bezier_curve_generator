@@ -58,7 +58,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
                 color: widget.color2,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 +
-                    50,
+                    80,
               ),
             ),
             ClipPath(
@@ -79,7 +79,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
                 color: widget.color3,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 2 +
-                    50,
+                    80,
               ),
             ),
             ClipPath(
@@ -100,7 +100,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
                 color: widget.color4,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 3 +
-                    50,
+                    80,
               ),
             ),
             ClipPath(
@@ -121,7 +121,7 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
                 color: widget.color5,
                 height: (MediaQuery.of(context).size.height) -
                     MediaQuery.of(context).size.height / 5 * 4 +
-                    50,
+                    80,
               ),
             ),
             GestureDetector(

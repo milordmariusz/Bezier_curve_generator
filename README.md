@@ -1,16 +1,14 @@
-# bezier_curve_generator
+# Bezier Curve Generator
 
-A new Flutter project.
+<p float="left">
+  <img src="/ss2.png" width="250" />
+  <img src="/ss1.png" width="250" /> 
+  <img src="/ss3.png" width="250" />
+</p>
 
-## Getting Started
+A simple image generator of Bezier curves. 
+The generator accepts 5 colors from the user, which it then uses to create the image.
+In the future, I plan to add a dark theme and other ways to generate curves.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To download the application to your phone (Android only),
+you just need to download and install the .apk file.
