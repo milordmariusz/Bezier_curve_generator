@@ -78,63 +78,63 @@ class _ColorPageState extends State<ColorPage> {
               ),
               SizedBox(width: 50),
               Container(
-                  height: 55,
-                  width: 175,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                              title: Text('Pick Your Color'),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  ColorPicker(
-                                      pickerColor: color1,
-                                      labelTypes: const [],
-                                      enableAlpha: false,
-                                      onColorChanged: (color) =>
-                                          setState(() => color1 = color)),
-                                  TextButton(
-                                    child: const Text(
-                                      'SELECT',
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                    onPressed: () =>
-                                        Navigator.of(context).pop(),
+                height: 55,
+                width: 175,
+                child: NeumorphicButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                            title: Text('Pick Your Color'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ColorPicker(
+                                    pickerColor: color1,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
+                                    onColorChanged: (color) =>
+                                        setState(() => color1 = color)),
+                                TextButton(
+                                  child: const Text(
+                                    'SELECT',
+                                    style: TextStyle(fontSize: 20),
                                   ),
-                                ],
-                              ));
-                        },
-                      );
-                    },
-                    style: NeumorphicStyle(
-                      color: AppColors.whiteBackground,
-                      shape: NeumorphicShape.flat,
-                      boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
-                      //border: NeumorphicBorder()
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Pick Color",
-                        style: GoogleFonts.archivoBlack(//customize depth here
-                          color: color1,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          shadows: <Shadow>[
-                            Shadow(
-                              offset: Offset(0.0, 0.0),
-                              blurRadius: 3.0,
-                              color: Color.fromARGB(255, 0, 0, 0),
-                            ),
-                          ],//customize color here
-                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
-                        ),
-                      ),
+                                  onPressed: () => Navigator.of(context).pop(),
+                                ),
+                              ],
+                            ));
+                      },
+                    );
+                  },
+                  style: NeumorphicStyle(
+                    color: AppColors.whiteBackground,
+                    shape: NeumorphicShape.flat,
+                    intensity: 1,
+                    boxShape:
+                        NeumorphicBoxShape.roundRect(BorderRadius.circular(30)),
+                    //border: NeumorphicBorder()
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Pick Color",
+                      style: GoogleFonts.raleway(
+                        color: AppColors.textColor,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(0.0, 0.0),
+                            blurRadius: 2.0,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ], //customize color here
+                      ), // AND others usual text style properties (fontFamily, fontWeight, ...)
                     ),
                   ),
+                ),
+              ),
             ],
           ),
           Row(
@@ -187,27 +187,28 @@ class _ColorPageState extends State<ColorPage> {
                       );
                     },
                     style: NeumorphicStyle(
+                      intensity: 1,
                       color: AppColors.whiteBackground,
                       shape: NeumorphicShape.flat,
                       boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
+                          BorderRadius.circular(30)),
                       //border: NeumorphicBorder()
                     ),
                     child: Center(
                       child: Text(
                         "Pick Color",
-                        style: GoogleFonts.archivoBlack(//customize depth here
-                          color: color2,
+                        style: GoogleFonts.raleway(
+                          color: AppColors.textColor,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
                             Shadow(
                               offset: Offset(0.0, 0.0),
-                              blurRadius: 3.0,
+                              blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
-                          ],//customize color here
-                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                          ], //customize color here
+                        ), // AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
                   )),
@@ -263,27 +264,27 @@ class _ColorPageState extends State<ColorPage> {
                       );
                     },
                     style: NeumorphicStyle(
+                      intensity: 1,
                       color: AppColors.whiteBackground,
                       shape: NeumorphicShape.flat,
                       boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
-                      //border: NeumorphicBorder()
+                          BorderRadius.circular(30)),
                     ),
                     child: Center(
                       child: Text(
                         "Pick Color",
-                        style: GoogleFonts.archivoBlack(//customize depth here
-                          color: color3,
+                        style: GoogleFonts.raleway(
+                          color: AppColors.textColor,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
                             Shadow(
                               offset: Offset(0.0, 0.0),
-                              blurRadius: 3.0,
+                              blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
-                          ],//customize color here
-                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                          ], //customize color here
+                        ), // AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
                   )),
@@ -339,27 +340,28 @@ class _ColorPageState extends State<ColorPage> {
                       );
                     },
                     style: NeumorphicStyle(
+                      intensity: 1,
                       color: AppColors.whiteBackground,
                       shape: NeumorphicShape.flat,
                       boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
+                          BorderRadius.circular(30)),
                       //border: NeumorphicBorder()
                     ),
                     child: Center(
                       child: Text(
                         "Pick Color",
-                        style: GoogleFonts.archivoBlack(//customize depth here
-                          color: color4,
+                        style: GoogleFonts.raleway(
+                          color: AppColors.textColor,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
                             Shadow(
                               offset: Offset(0.0, 0.0),
-                              blurRadius: 3.0,
+                              blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
-                          ],//customize color here
-                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                          ], //customize color here
+                        ), // AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
                   )),
@@ -415,36 +417,36 @@ class _ColorPageState extends State<ColorPage> {
                       );
                     },
                     style: NeumorphicStyle(
+                      intensity: 1,
                       color: AppColors.whiteBackground,
                       shape: NeumorphicShape.flat,
                       boxShape: NeumorphicBoxShape.roundRect(
-                          BorderRadius.circular(8)),
+                          BorderRadius.circular(30)),
                       //border: NeumorphicBorder()
                     ),
                     child: Center(
                       child: Text(
                         "Pick Color",
-                        style: GoogleFonts.archivoBlack(//customize depth here
-                          color: color5,
+                        style: GoogleFonts.raleway(
+                          color: AppColors.textColor,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           shadows: <Shadow>[
                             Shadow(
                               offset: Offset(0.0, 0.0),
-                              blurRadius: 3.0,
+                              blurRadius: 2.0,
                               color: Color.fromARGB(255, 0, 0, 0),
                             ),
                           ],
                           //customize color here
-                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ), // AND others usual text style properties (fontFamily, fontWeight, ...)
                       ),
                     ),
                   )),
             ],
           ),
-
           Container(
-              height: 55,
+              height: 60,
               width: 250,
               child: NeumorphicButton(
                 onPressed: () {
@@ -461,26 +463,27 @@ class _ColorPageState extends State<ColorPage> {
                   );
                 },
                 style: NeumorphicStyle(
+                  intensity: 1,
                   color: AppColors.whiteBackground,
                   shape: NeumorphicShape.flat,
                   boxShape:
-                      NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
+                      NeumorphicBoxShape.roundRect(BorderRadius.circular(30)),
                 ),
-                padding: const EdgeInsets.only(bottom: 8.0),
+                padding: const EdgeInsets.only(bottom: 0.0),
                 child: Center(
                   child: Text(
                     "Generate",
-                    style: GoogleFonts.archivoBlack(//customize depth here
-                      color: Colors.white,
+                    style: GoogleFonts.raleway(
+                      color: AppColors.textColor,
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
                       shadows: <Shadow>[
                         Shadow(
                           offset: Offset(0.0, 0.0),
-                          blurRadius: 3.0,
+                          blurRadius: 2.0,
                           color: Color.fromARGB(255, 0, 0, 0),
                         ),
-                      ],//customize color here
+                      ], //customize color here
                     ),
                   ),
                 ),
