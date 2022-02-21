@@ -2,6 +2,7 @@ import 'package:bezier_curve_generator/curve_generator_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
@@ -29,23 +30,31 @@ class _ColorPageState extends State<ColorPage> {
         height: size.height,
         width: size.width,
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            AppColors.bgColor,
-            AppColors.gradientColor,
-          ],
-        )),
+          color: AppColors.whiteBackground,
+        ),
       ),
       Center(
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
           height: size.height - 50,
           width: 350,
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15.0),
-          ),
+              color: Colors.grey[300],
+              borderRadius: BorderRadius.circular(50),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey[500]!,
+                  offset: const Offset(4, 4),
+                  blurRadius: 15,
+                  spreadRadius: 1,
+                ),
+                const BoxShadow(
+                  color: Colors.white,
+                  offset: Offset(-4, -4),
+                  blurRadius: 15,
+                  spreadRadius: 1,
+                )
+              ]),
         ),
       ),
       Column(
@@ -55,13 +64,18 @@ class _ColorPageState extends State<ColorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+              Neumorphic(
+                style: NeumorphicStyle(
                   color: color1,
+                  boxShape: NeumorphicBoxShape.circle(),
+                  intensity: 1,
+                  depth: -20,
+                  lightSource: LightSource.topLeft,
                 ),
-                width: 90,
-                height: 90,
+                child: Container(
+                  width: 90,
+                  height: 90,
+                ),
               ),
               SizedBox(width: 50),
               ElevatedButton(
@@ -87,6 +101,8 @@ class _ColorPageState extends State<ColorPage> {
                               children: [
                                 ColorPicker(
                                     pickerColor: color1,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
                                     onColorChanged: (color) =>
                                         setState(() => color1 = color)),
                                 TextButton(
@@ -106,13 +122,18 @@ class _ColorPageState extends State<ColorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+              Neumorphic(
+                style: NeumorphicStyle(
                   color: color2,
+                  boxShape: NeumorphicBoxShape.circle(),
+                  intensity: 1,
+                  depth: -20,
+                  lightSource: LightSource.topLeft,
                 ),
-                width: 90,
-                height: 90,
+                child: Container(
+                  width: 90,
+                  height: 90,
+                ),
               ),
               SizedBox(width: 50),
               ElevatedButton(
@@ -138,6 +159,8 @@ class _ColorPageState extends State<ColorPage> {
                               children: [
                                 ColorPicker(
                                     pickerColor: color2,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
                                     onColorChanged: (color) =>
                                         setState(() => color2 = color)),
                                 TextButton(
@@ -157,13 +180,18 @@ class _ColorPageState extends State<ColorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+              Neumorphic(
+                style: NeumorphicStyle(
                   color: color3,
+                  boxShape: NeumorphicBoxShape.circle(),
+                  intensity: 1,
+                  depth: -20,
+                  lightSource: LightSource.topLeft,
                 ),
-                width: 90,
-                height: 90,
+                child: Container(
+                  width: 90,
+                  height: 90,
+                ),
               ),
               SizedBox(width: 50),
               ElevatedButton(
@@ -189,6 +217,8 @@ class _ColorPageState extends State<ColorPage> {
                               children: [
                                 ColorPicker(
                                     pickerColor: color3,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
                                     onColorChanged: (color) =>
                                         setState(() => color3 = color)),
                                 TextButton(
@@ -208,13 +238,18 @@ class _ColorPageState extends State<ColorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+              Neumorphic(
+                style: NeumorphicStyle(
                   color: color4,
+                  boxShape: NeumorphicBoxShape.circle(),
+                  intensity: 1,
+                  depth: -20,
+                  lightSource: LightSource.topLeft,
                 ),
-                width: 90,
-                height: 90,
+                child: Container(
+                  width: 90,
+                  height: 90,
+                ),
               ),
               SizedBox(width: 50),
               ElevatedButton(
@@ -240,6 +275,8 @@ class _ColorPageState extends State<ColorPage> {
                               children: [
                                 ColorPicker(
                                     pickerColor: color4,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
                                     onColorChanged: (color) =>
                                         setState(() => color4 = color)),
                                 TextButton(
@@ -259,13 +296,18 @@ class _ColorPageState extends State<ColorPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+              Neumorphic(
+                style: NeumorphicStyle(
                   color: color5,
+                  boxShape: NeumorphicBoxShape.circle(),
+                  intensity: 1,
+                  depth: -20,
+                  lightSource: LightSource.topLeft,
                 ),
-                width: 90,
-                height: 90,
+                child: Container(
+                  width: 90,
+                  height: 90,
+                ),
               ),
               SizedBox(width: 50),
               ElevatedButton(
@@ -291,6 +333,8 @@ class _ColorPageState extends State<ColorPage> {
                               children: [
                                 ColorPicker(
                                     pickerColor: color5,
+                                    labelTypes: const [],
+                                    enableAlpha: false,
                                     onColorChanged: (color) =>
                                         setState(() => color5 = color)),
                                 TextButton(
@@ -342,28 +386,4 @@ class _ColorPageState extends State<ColorPage> {
       ),
     ]);
   }
-
-  Widget buildColorPicker(Color colorend) => ColorPicker(
-        pickerColor: colorend,
-        onColorChanged: (color) => setState(() => colorend = color),
-      );
-
-  void pickColor(BuildContext context, Color colorend) => showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-            title: Text('Pick Your Color'),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                buildColorPicker(colorend),
-                TextButton(
-                  child: const Text(
-                    'SELECT',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
-              ],
-            )),
-      );
 }

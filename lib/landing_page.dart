@@ -22,7 +22,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: AppColors.whiteBackground,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,7 +52,7 @@ class _LandingPageState extends State<LandingPage> {
                       builder: (context) => ColorPage()));
                 },
                 style: NeumorphicStyle(
-                  color: Colors.grey[300],
+                  color: AppColors.whiteBackground,
                   shape: NeumorphicShape.flat,
                   boxShape:
                   NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),

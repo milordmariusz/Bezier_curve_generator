@@ -6,4 +6,5 @@ class AppColors {
   static const titleColor = Color(0xFF37E9BB);
   static const bgColor = Color(0xFFF3D7FF);
   static const gradientColor = Color(0xFFFFE4C1);
+  static const whiteBackground = Color(0xFFE0E0E0);
 }
