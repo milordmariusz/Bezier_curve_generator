@@ -1,70 +1,86 @@
-import 'package:bezier_curve_generator/color_page.dart';
-import 'package:bezier_curve_generator/curve_generator_page.dart';
+import 'dart:io';
+
+import 'package:bezier_curve_generator/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
+import 'color_page.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
+class LandingPage extends StatefulWidget {
+  @override
+  _LandingPageState createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  bool _isElevated = true;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
-        height: size.height,
-        width: size.width,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                AppColors.bgColor,
-                AppColors.gradientColor,
-              ],
-            )),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Bezier curve generator',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.nunito(
-                  color: Colors.white,
-                  fontSize: 60,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 200),
-            SizedBox(
-              width: size.width * 0.8,
-              height: 70,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: AppColors.buttonColor,
-                  onPrimary: Colors.white,
-                ),
-                child: Text(
-                  'Generate painting',
-                  style: GoogleFonts.nunito(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ColorPage()),
-                  );
-                },
+      backgroundColor: Colors.grey[300],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Bezier curve generator',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.nunito(
+                color: Colors.white, fontSize: 60, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 200),
+          Center(
+              child: GestureDetector(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              height: 200,
+              width: 200,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: _isElevated
+                    ? [
+                        BoxShadow(
+                          color: Colors.grey[500]!,
+                          offset: const Offset(4, 4),
+                          blurRadius: 15,
+                          spreadRadius: 1,
+                        ),
+                        const BoxShadow(
+                          color: Colors.white,
+                          offset: Offset(-4, -4),
+                          blurRadius: 15,
+                          spreadRadius: 1,
+                        )
+                      ]
+                    : null,
               ),
             ),
-            const SizedBox(height: 30),
-          ],
-        ),
+            onTap: (){
+              setState(() {
+                _isElevated = !_isElevated;
+                Navigator.push(
+                    context,
+                    MyRoute(
+                    builder: (context) => ColorPage()));
+              });
+            },
+          )),
+          const SizedBox(height: 30),
+        ],
       ),
     );
   }
 }
+
+class MyRoute extends MaterialPageRoute {
+  MyRoute({required WidgetBuilder builder}) : super(builder: builder);
+
+  @override
+  Duration get transitionDuration => Duration(milliseconds: 1500);
+}
+
+
