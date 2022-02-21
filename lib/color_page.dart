@@ -15,11 +15,18 @@ class ColorPage extends StatefulWidget {
 }
 
 class _ColorPageState extends State<ColorPage> {
-  Color color1 = Colors.red;
-  Color color2 = Colors.green;
-  Color color3 = Colors.blue;
-  Color color4 = Colors.orange;
-  Color color5 = Colors.purple;
+  // Color color1 = Colors.red;
+  // Color color2 = Colors.green;
+  // Color color3 = Colors.blue;
+  // Color color4 = Colors.orange;
+  // Color color5 = Colors.purple;
+
+  Color color1 = Colors.white;
+  Color color2 = Colors.white;
+  Color color3 = Colors.white;
+  Color color4 = Colors.white;
+  Color color5 = Colors.white;
+
 
   @override
   Widget build(BuildContext context) {
