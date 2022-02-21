@@ -1,8 +1,8 @@
 # Bezier Curve Generator
 
 <p float="left">
-  <img src="/ss2.png" width="250" />
-  <img src="/ss1.png" width="250" /> 
+  <img src="/ss1.png" width="250" />
+  <img src="/ss2.png" width="250" /> 
   <img src="/ss3.png" width="250" />
 </p>
 
