@@ -15,18 +15,11 @@ class ColorPage extends StatefulWidget {
 }
 
 class _ColorPageState extends State<ColorPage> {
-  // Color color1 = Colors.red;
-  // Color color2 = Colors.green;
-  // Color color3 = Colors.blue;
-  // Color color4 = Colors.orange;
-  // Color color5 = Colors.purple;
-
   Color color1 = Colors.white;
   Color color2 = Colors.white;
   Color color3 = Colors.white;
   Color color4 = Colors.white;
   Color color5 = Colors.white;
-
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +34,7 @@ class _ColorPageState extends State<ColorPage> {
         ),
       ),
       Center(
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+        child: Container(
           height: size.height - 50,
           width: 350,
           decoration: BoxDecoration(
@@ -85,45 +77,57 @@ class _ColorPageState extends State<ColorPage> {
                 ),
               ),
               SizedBox(width: 50),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.buttonColor,
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text(
-                    'Pick Color',
-                    style: GoogleFonts.nunito(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+              Container(
+                  height: 55,
+                  width: 175,
+                  child: NeumorphicButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              title: Text('Pick Your Color'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ColorPicker(
+                                      pickerColor: color1,
+                                      labelTypes: const [],
+                                      enableAlpha: false,
+                                      onColorChanged: (color) =>
+                                          setState(() => color1 = color)),
+                                  TextButton(
+                                    child: const Text(
+                                      'SELECT',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
+                                  ),
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(8)),
+                      //border: NeumorphicBorder()
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pick Color",
+                        style: GoogleFonts.archivoBlack(//customize depth here
+                          color: color1,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,//customize color here
+                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                        ),
+                      ),
                     ),
                   ),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                            title: Text('Pick Your Color'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ColorPicker(
-                                    pickerColor: color1,
-                                    labelTypes: const [],
-                                    enableAlpha: false,
-                                    onColorChanged: (color) =>
-                                        setState(() => color1 = color)),
-                                TextButton(
-                                  child: const Text(
-                                    'SELECT',
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                  onPressed: () => Navigator.of(context).pop(),
-                                ),
-                              ],
-                            ));
-                      },
-                    );
-                  }),
             ],
           ),
           Row(
@@ -143,45 +147,56 @@ class _ColorPageState extends State<ColorPage> {
                 ),
               ),
               SizedBox(width: 50),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.buttonColor,
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text(
-                    'Pick Color',
-                    style: GoogleFonts.nunito(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                            title: Text('Pick Your Color'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ColorPicker(
-                                    pickerColor: color2,
-                                    labelTypes: const [],
-                                    enableAlpha: false,
-                                    onColorChanged: (color) =>
-                                        setState(() => color2 = color)),
-                                TextButton(
-                                  child: const Text(
-                                    'SELECT',
-                                    style: TextStyle(fontSize: 20),
+              Container(
+                  height: 55,
+                  width: 175,
+                  child: NeumorphicButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              title: Text('Pick Your Color'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ColorPicker(
+                                      pickerColor: color2,
+                                      labelTypes: const [],
+                                      enableAlpha: false,
+                                      onColorChanged: (color) =>
+                                          setState(() => color2 = color)),
+                                  TextButton(
+                                    child: const Text(
+                                      'SELECT',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
                                   ),
-                                  onPressed: () => Navigator.of(context).pop(),
-                                ),
-                              ],
-                            ));
-                      },
-                    );
-                  }),
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(8)),
+                      //border: NeumorphicBorder()
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pick Color",
+                        style: GoogleFonts.archivoBlack(//customize depth here
+                          color: color2,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,//customize color here
+                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                    ),
+                  )),
             ],
           ),
           Row(
@@ -201,45 +216,56 @@ class _ColorPageState extends State<ColorPage> {
                 ),
               ),
               SizedBox(width: 50),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.buttonColor,
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text(
-                    'Pick Color',
-                    style: GoogleFonts.nunito(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                            title: Text('Pick Your Color'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ColorPicker(
-                                    pickerColor: color3,
-                                    labelTypes: const [],
-                                    enableAlpha: false,
-                                    onColorChanged: (color) =>
-                                        setState(() => color3 = color)),
-                                TextButton(
-                                  child: const Text(
-                                    'SELECT',
-                                    style: TextStyle(fontSize: 20),
+              Container(
+                  height: 55,
+                  width: 175,
+                  child: NeumorphicButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              title: Text('Pick Your Color'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ColorPicker(
+                                      pickerColor: color3,
+                                      labelTypes: const [],
+                                      enableAlpha: false,
+                                      onColorChanged: (color) =>
+                                          setState(() => color3 = color)),
+                                  TextButton(
+                                    child: const Text(
+                                      'SELECT',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
                                   ),
-                                  onPressed: () => Navigator.of(context).pop(),
-                                ),
-                              ],
-                            ));
-                      },
-                    );
-                  }),
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(8)),
+                      //border: NeumorphicBorder()
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pick Color",
+                        style: GoogleFonts.archivoBlack(//customize depth here
+                          color: color3,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,//customize color here
+                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                    ),
+                  )),
             ],
           ),
           Row(
@@ -259,45 +285,56 @@ class _ColorPageState extends State<ColorPage> {
                 ),
               ),
               SizedBox(width: 50),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.buttonColor,
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text(
-                    'Pick Color',
-                    style: GoogleFonts.nunito(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                            title: Text('Pick Your Color'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ColorPicker(
-                                    pickerColor: color4,
-                                    labelTypes: const [],
-                                    enableAlpha: false,
-                                    onColorChanged: (color) =>
-                                        setState(() => color4 = color)),
-                                TextButton(
-                                  child: const Text(
-                                    'SELECT',
-                                    style: TextStyle(fontSize: 20),
+              Container(
+                  height: 55,
+                  width: 175,
+                  child: NeumorphicButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              title: Text('Pick Your Color'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ColorPicker(
+                                      pickerColor: color4,
+                                      labelTypes: const [],
+                                      enableAlpha: false,
+                                      onColorChanged: (color) =>
+                                          setState(() => color4 = color)),
+                                  TextButton(
+                                    child: const Text(
+                                      'SELECT',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
                                   ),
-                                  onPressed: () => Navigator.of(context).pop(),
-                                ),
-                              ],
-                            ));
-                      },
-                    );
-                  }),
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(8)),
+                      //border: NeumorphicBorder()
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pick Color",
+                        style: GoogleFonts.archivoBlack(//customize depth here
+                          color: color4,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,//customize color here
+                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                    ),
+                  )),
             ],
           ),
           Row(
@@ -317,77 +354,94 @@ class _ColorPageState extends State<ColorPage> {
                 ),
               ),
               SizedBox(width: 50),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.buttonColor,
-                    onPrimary: Colors.white,
-                  ),
-                  child: Text(
-                    'Pick Color',
-                    style: GoogleFonts.nunito(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                            title: Text('Pick Your Color'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                ColorPicker(
-                                    pickerColor: color5,
-                                    labelTypes: const [],
-                                    enableAlpha: false,
-                                    onColorChanged: (color) =>
-                                        setState(() => color5 = color)),
-                                TextButton(
-                                  child: const Text(
-                                    'SELECT',
-                                    style: TextStyle(fontSize: 20),
+              Container(
+                  height: 55,
+                  width: 175,
+                  child: NeumorphicButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                              title: Text('Pick Your Color'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  ColorPicker(
+                                      pickerColor: color5,
+                                      labelTypes: const [],
+                                      enableAlpha: false,
+                                      onColorChanged: (color) =>
+                                          setState(() => color5 = color)),
+                                  TextButton(
+                                    child: const Text(
+                                      'SELECT',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
                                   ),
-                                  onPressed: () => Navigator.of(context).pop(),
-                                ),
-                              ],
-                            ));
-                      },
-                    );
-                  }),
+                                ],
+                              ));
+                        },
+                      );
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      boxShape: NeumorphicBoxShape.roundRect(
+                          BorderRadius.circular(8)),
+                      //border: NeumorphicBorder()
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pick Color",
+                        style: GoogleFonts.archivoBlack(//customize depth here
+                          color: color5,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,//customize color here
+                        ),// AND others usual text style properties (fontFamily, fontWeight, ...)
+                      ),
+                    ),
+                  )),
             ],
           ),
-          SizedBox(
-            width: 280,
-            height: 60,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: AppColors.buttonColor,
-                onPrimary: Colors.white,
-              ),
-              child: Text(
-                'Generate painting',
-                style: GoogleFonts.nunito(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+
+          Container(
+              height: 55,
+              width: 250,
+              child: NeumorphicButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CurveGeneratorPage(
+                              color1: color5,
+                              color2: color4,
+                              color3: color3,
+                              color4: color2,
+                              color5: color1,
+                            )),
+                  );
+                },
+                style: NeumorphicStyle(
+                  color: AppColors.whiteBackground,
+                  shape: NeumorphicShape.flat,
+                  boxShape:
+                      NeumorphicBoxShape.roundRect(BorderRadius.circular(8)),
                 ),
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => CurveGeneratorPage(
-                            color1: color1,
-                            color2: color2,
-                            color3: color3,
-                            color4: color4,
-                            color5: color5,
-                          )),
-                );
-              },
-            ),
-          ),
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Center(
+                  child: Text(
+                    "Generate",
+                    style: GoogleFonts.archivoBlack(//customize depth here
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,//customize color here
+                    ),
+                  ),
+                ),
+              )),
           SizedBox(height: 20),
         ],
       ),
