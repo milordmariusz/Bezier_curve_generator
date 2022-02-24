@@ -9,6 +9,9 @@ void main()async{
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((value) => runApp(const MyApp()));
 
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [
+  ]);
+
   runApp(const MyApp());
 }
 
