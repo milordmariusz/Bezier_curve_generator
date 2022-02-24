@@ -110,7 +110,7 @@ class _LandingPageState extends State<LandingPage> {
                   },
                   style: NeumorphicStyle(
                     color: AppColors.whiteBackground,
-                    shape: NeumorphicShape.concave,
+                    shape: NeumorphicShape.flat,
                     depth: 10,
                     intensity: 1,
                     boxShape:

@@ -122,7 +122,7 @@ class _ColorPageState extends State<ColorPage> {
                       color: color1,
                       shape: NeumorphicShape.flat,
                       intensity: 1,
-                      boxShape: NeumorphicBoxShape.circle(),
+                      boxShape: const NeumorphicBoxShape.circle(),
                     ),
                   ),
                 ),
@@ -178,7 +178,7 @@ class _ColorPageState extends State<ColorPage> {
                       color: color2,
                       shape: NeumorphicShape.flat,
                       intensity: 1,
-                      boxShape: NeumorphicBoxShape.circle(),
+                      boxShape: const NeumorphicBoxShape.circle(),
                     ),
                   ),
                 ),
@@ -233,7 +233,7 @@ class _ColorPageState extends State<ColorPage> {
                       color: color3,
                       shape: NeumorphicShape.flat,
                       intensity: 1,
-                      boxShape: NeumorphicBoxShape.circle(),
+                      boxShape: const NeumorphicBoxShape.circle(),
                     ),
                   ),
                 ),
@@ -288,7 +288,7 @@ class _ColorPageState extends State<ColorPage> {
                       color: color4,
                       shape: NeumorphicShape.flat,
                       intensity: 1,
-                      boxShape: NeumorphicBoxShape.circle(),
+                      boxShape: const NeumorphicBoxShape.circle(),
                     ),
                   ),
                 ),
@@ -344,7 +344,7 @@ class _ColorPageState extends State<ColorPage> {
                       color: color5,
                       shape: NeumorphicShape.flat,
                       intensity: 1,
-                      boxShape: NeumorphicBoxShape.circle(),
+                      boxShape: const NeumorphicBoxShape.circle(),
                     ),
                   ),
                 ),
@@ -388,7 +388,7 @@ class _ColorPageState extends State<ColorPage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      style: NeumorphicStyle(
+                      style: const NeumorphicStyle(
                         intensity: 1,
                         color: AppColors.whiteBackground,
                         shape: NeumorphicShape.flat,
@@ -396,7 +396,7 @@ class _ColorPageState extends State<ColorPage> {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.arrow_back_rounded,
                             color: AppColors.textColor,
