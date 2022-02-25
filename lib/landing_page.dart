@@ -203,8 +203,7 @@ class _LandingPageState extends State<LandingPage> {
                   height: 20,
                 ),
                 const Text(
-                  "If you like what has been generated, you can take a screenshot and set it as wallpaper."
-                ),
+                    "If you like what has been generated, you can take a screenshot and set it as wallpaper."),
                 const SizedBox(
                   height: 20,
                 ),
