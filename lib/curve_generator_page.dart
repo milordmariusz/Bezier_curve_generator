@@ -128,6 +128,9 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
               onTap: () {
                 setState(() {});
               },
+              onLongPress: (){
+                Navigator.pop(context);
+              },
             ),
           ],
         ),

@@ -93,6 +93,35 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ),
       ),
+      Align(
+        alignment: const Alignment(0.9, -0.9),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: NeumorphicButton(
+            onPressed: () {
+              //TODO
+            },
+            style: const NeumorphicStyle(
+              intensity: 1,
+              color: AppColors.whiteBackground,
+              shape: NeumorphicShape.flat,
+              boxShape: NeumorphicBoxShape.circle(),
+            ),
+          ),
+        ),
+      ),
+      const Align(
+        alignment: Alignment(0.9, -0.9),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: Icon(
+            Icons.info_outline_rounded,
+            color: AppColors.textColor,
+          ),
+        ),
+      ),
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,8 +134,10 @@ class _LandingPageState extends State<LandingPage> {
                 child: NeumorphicButton(
                   margin: const EdgeInsets.only(top: 12),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const ColorPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ColorPage()));
                   },
                   style: NeumorphicStyle(
                     color: AppColors.whiteBackground,

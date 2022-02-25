@@ -65,7 +65,6 @@ class _ColorPageState extends State<ColorPage> {
     Size size = MediaQuery.of(context).size;
     return Stack(children: [
       Container(
-        padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
         height: size.height,
         width: size.width,
         decoration: const BoxDecoration(
