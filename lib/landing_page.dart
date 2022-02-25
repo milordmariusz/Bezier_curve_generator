@@ -55,6 +55,37 @@ class _LandingPageState extends State<LandingPage> {
               50,
         ),
       ),
+      Stack(children: [
+        Align(
+          alignment: Alignment(0.9, -0.9),
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: Icon(
+              Icons.info_outline_rounded,
+              color: AppColors.textColor,
+            ),
+          ),
+        ),
+        Align(
+          alignment: const Alignment(0.9, -0.9),
+          child: SizedBox(
+            height: 50,
+            width: 50,
+            child: NeumorphicButton(
+              onPressed: () {
+                _infoDialog();
+              },
+              style: const NeumorphicStyle(
+                intensity: 1,
+                color: Colors.transparent,
+                shape: NeumorphicShape.flat,
+                boxShape: NeumorphicBoxShape.circle(),
+              ),
+            ),
+          ),
+        ),
+      ]),
       Align(
         alignment: const Alignment(-0.75, -0.60),
         child: Text(
@@ -91,35 +122,7 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ),
       ),
-      const Align(
-        alignment: Alignment(0.9, -0.9),
-        child: SizedBox(
-          height: 50,
-          width: 50,
-          child: Icon(
-            Icons.info_outline_rounded,
-            color: AppColors.textColor,
-          ),
-        ),
-      ),
-      Align(
-        alignment: const Alignment(0.9, -0.9),
-        child: SizedBox(
-          height: 50,
-          width: 50,
-          child: NeumorphicButton(
-            onPressed: () {
-              _infoDialog();
-            },
-            style: const NeumorphicStyle(
-              intensity: 1,
-              color: Colors.transparent,
-              shape: NeumorphicShape.flat,
-              boxShape: NeumorphicBoxShape.circle(),
-            ),
-          ),
-        ),
-      ),
+
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -194,7 +197,7 @@ class _LandingPageState extends State<LandingPage> {
                 Row(
                   children: const [
                     Icon(Icons.touch_app),
-                    Text("Tap and hold: Return to color menu.")
+                    Text("Hold: Return to color menu.")
                   ],
                 ),
                 const SizedBox(

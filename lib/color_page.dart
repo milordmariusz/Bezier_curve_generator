@@ -71,8 +71,7 @@ class _ColorPageState extends State<ColorPage> {
           color: AppColors.whiteBackground,
         ),
       ),
-      Align(
-        alignment: const Alignment(0.0, -0.3),
+      Center(
         child: Container(
           height: size.height - 80,
           width: 330,

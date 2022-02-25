@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:bezier_curve_generator/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,9 +13,9 @@ double curveData4 = 0;
 double curveData5 = 0;
 double curveData6 = 0;
 
-
 class CurveGeneratorPage extends StatefulWidget {
-  CurveGeneratorPage({Key? key,
+  CurveGeneratorPage({
+    Key? key,
     required this.color1,
     required this.color2,
     required this.color3,
@@ -33,7 +34,6 @@ class CurveGeneratorPage extends StatefulWidget {
 }
 
 class _CurveGenerator extends State<CurveGeneratorPage> {
-
   @override
   void initState() {
     WaveClipper wc = WaveClipper(isShadow: false);
@@ -44,100 +44,100 @@ class _CurveGenerator extends State<CurveGeneratorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: widget.color1,
-        body: SafeArea(
-          top: false,
-          child: Stack(
-            children: [
-              ClipShadowPath(
-                shadow: const BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(0, 7),
-                  blurRadius: 10,
-                  spreadRadius: 8,
-                ),
-                clipper: WaveClipper(isShadow: false),
-                child: Container(
-                  color: widget.color2,
-                  height: (MediaQuery.of(context).size.height) -
-                      MediaQuery.of(context).size.height / 5 +
-                      80,
-                ),
+      backgroundColor: widget.color1,
+      body: SafeArea(
+        top: false,
+        child: Stack(
+          children: [
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
               ),
-              ClipPath(
-                clipper: WaveClipper(isShadow: true),
-                child: Container(
-                  color: Colors.transparent,
-                ),
+              clipper: WaveClipper(isShadow: false),
+              child: Container(
+                color: widget.color2,
+                height: (MediaQuery.of(context).size.height) -
+                    MediaQuery.of(context).size.height / 5 +
+                    80,
               ),
-              ClipShadowPath(
-                shadow: const BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(0, 7),
-                  blurRadius: 10,
-                  spreadRadius: 8,
-                ),
-                clipper: WaveClipper(isShadow: false),
-                child: Container(
-                  color: widget.color3,
-                  height: (MediaQuery.of(context).size.height) -
-                      MediaQuery.of(context).size.height / 5 * 2 +
-                      80,
-                ),
+            ),
+            ClipPath(
+              clipper: WaveClipper(isShadow: true),
+              child: Container(
+                color: Colors.transparent,
               ),
-              ClipPath(
-                clipper: WaveClipper(isShadow: true),
-                child: Container(
-                  color: Colors.transparent,
-                ),
+            ),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
               ),
-              ClipShadowPath(
-                shadow: const BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(0, 7),
-                  blurRadius: 10,
-                  spreadRadius: 8,
-                ),
-                clipper: WaveClipper(isShadow: false),
-                child: Container(
-                  color: widget.color4,
-                  height: (MediaQuery.of(context).size.height) -
-                      MediaQuery.of(context).size.height / 5 * 3 +
-                      80,
-                ),
+              clipper: WaveClipper(isShadow: false),
+              child: Container(
+                color: widget.color3,
+                height: (MediaQuery.of(context).size.height) -
+                    MediaQuery.of(context).size.height / 5 * 2 +
+                    80,
               ),
-              ClipPath(
-                clipper: WaveClipper(isShadow: true),
-                child: Container(
-                  color: Colors.transparent,
-                ),
+            ),
+            ClipPath(
+              clipper: WaveClipper(isShadow: true),
+              child: Container(
+                color: Colors.transparent,
               ),
-              ClipShadowPath(
-                shadow: const BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(0, 7),
-                  blurRadius: 10,
-                  spreadRadius: 8,
-                ),
-                clipper: WaveClipper(isShadow: false),
-                child: Container(
-                  color: widget.color5,
-                  height: (MediaQuery.of(context).size.height) -
-                      MediaQuery.of(context).size.height / 5 * 4 +
-                      80,
-                ),
+            ),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
               ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {});
-                },
-                onLongPress: (){
-                  Navigator.pop(context);
-                },
+              clipper: WaveClipper(isShadow: false),
+              child: Container(
+                color: widget.color4,
+                height: (MediaQuery.of(context).size.height) -
+                    MediaQuery.of(context).size.height / 5 * 3 +
+                    80,
               ),
-            ],
-          ),
+            ),
+            ClipPath(
+              clipper: WaveClipper(isShadow: true),
+              child: Container(
+                color: Colors.transparent,
+              ),
+            ),
+            ClipShadowPath(
+              shadow: const BoxShadow(
+                color: Colors.black,
+                offset: Offset(0, 7),
+                blurRadius: 10,
+                spreadRadius: 8,
+              ),
+              clipper: WaveClipper(isShadow: false),
+              child: Container(
+                color: widget.color5,
+                height: (MediaQuery.of(context).size.height) -
+                    MediaQuery.of(context).size.height / 5 * 4 +
+                    80,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {});
+              },
+              onLongPress: (){
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
+      ),
     );
   }
 }
