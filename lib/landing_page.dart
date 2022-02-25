@@ -17,12 +17,10 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Stack(children: [
       Container(
-        padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
-        height: size.height,
-        width: size.width,
+        height: double.infinity,
+        width: double.infinity,
         decoration: const BoxDecoration(
           color: AppColors.whiteBackground,
         ),
