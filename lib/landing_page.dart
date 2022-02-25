@@ -16,6 +16,12 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   @override
+  void initState() {
+    setState(() {});
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
@@ -55,37 +61,35 @@ class _LandingPageState extends State<LandingPage> {
               50,
         ),
       ),
-      Stack(children: [
-        Align(
-          alignment: Alignment(0.9, -0.9),
-          child: SizedBox(
-            height: 50,
-            width: 50,
-            child: Icon(
-              Icons.info_outline_rounded,
-              color: AppColors.textColor,
+      const Align(
+        alignment: Alignment(0.9, -0.9),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: Icon(
+            Icons.info_outline_rounded,
+            color: AppColors.textColor,
+          ),
+        ),
+      ),
+      Align(
+        alignment: const Alignment(0.9, -0.9),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: NeumorphicButton(
+            onPressed: () {
+              _infoDialog();
+            },
+            style: NeumorphicStyle(
+              intensity: 1,
+              color: Colors.transparent,
+              shape: NeumorphicShape.flat,
+              boxShape: NeumorphicBoxShape.circle(),
             ),
           ),
         ),
-        Align(
-          alignment: const Alignment(0.9, -0.9),
-          child: SizedBox(
-            height: 50,
-            width: 50,
-            child: NeumorphicButton(
-              onPressed: () {
-                _infoDialog();
-              },
-              style: const NeumorphicStyle(
-                intensity: 1,
-                color: Colors.transparent,
-                shape: NeumorphicShape.flat,
-                boxShape: NeumorphicBoxShape.circle(),
-              ),
-            ),
-          ),
-        ),
-      ]),
+      ),
       Align(
         alignment: const Alignment(-0.75, -0.60),
         child: Text(
@@ -122,7 +126,6 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ),
       ),
-
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
