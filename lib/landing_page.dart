@@ -34,7 +34,7 @@ class _LandingPageState extends State<LandingPage> {
           blurRadius: 10,
           spreadRadius: 4,
         ),
-        clipper: SecondWaveClipperTitle(),
+        clipper: _SecondWaveClipperTitle(),
         child: Container(
           color: AppColors.whiteBackground,
           height: (MediaQuery.of(context).size.height) -
@@ -49,7 +49,7 @@ class _LandingPageState extends State<LandingPage> {
           blurRadius: 10,
           spreadRadius: 4,
         ),
-        clipper: FirstWaveClipperTitle(),
+        clipper: _FirstWaveClipperTitle(),
         child: Container(
           color: AppColors.whiteBackground,
           height: (MediaQuery.of(context).size.height) -
@@ -93,24 +93,6 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ),
       ),
-      Align(
-        alignment: const Alignment(0.9, -0.9),
-        child: SizedBox(
-          height: 50,
-          width: 50,
-          child: NeumorphicButton(
-            onPressed: () {
-              //TODO
-            },
-            style: const NeumorphicStyle(
-              intensity: 1,
-              color: AppColors.whiteBackground,
-              shape: NeumorphicShape.flat,
-              boxShape: NeumorphicBoxShape.circle(),
-            ),
-          ),
-        ),
-      ),
       const Align(
         alignment: Alignment(0.9, -0.9),
         child: SizedBox(
@@ -119,6 +101,24 @@ class _LandingPageState extends State<LandingPage> {
           child: Icon(
             Icons.info_outline_rounded,
             color: AppColors.textColor,
+          ),
+        ),
+      ),
+      Align(
+        alignment: const Alignment(0.9, -0.9),
+        child: SizedBox(
+          height: 50,
+          width: 50,
+          child: NeumorphicButton(
+            onPressed: () {
+              _infoDialog();
+            },
+            style: const NeumorphicStyle(
+              intensity: 1,
+              color: Colors.transparent,
+              shape: NeumorphicShape.flat,
+              boxShape: NeumorphicBoxShape.circle(),
+            ),
           ),
         ),
       ),
@@ -167,9 +167,62 @@ class _LandingPageState extends State<LandingPage> {
       ),
     ]);
   }
+
+  Future<void> _infoDialog() async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(32.0))),
+            title: const Align(
+              alignment: Alignment.center,
+              child: Text('How to use app?'),
+            ),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text(
+                    "This is a simple Bezier curves image generator.\nAfter selecting 5 colors and pressing the \"Generate\" button:\n"),
+                Row(
+                  children: const [
+                    Icon(Icons.touch_app),
+                    Text("Tap: Generate new image.")
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: const [
+                    Icon(Icons.touch_app),
+                    Text("Tap and hold: Return to color menu.")
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "If you like what has been generated, you can take a screenshot and set it as wallpaper."
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextButton(
+                  child: const Text(
+                    'Return',
+                    style: TextStyle(fontSize: 25, color: AppColors.textColor),
+                  ),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ],
+            ));
+      },
+    );
+  }
 }
 
-class FirstWaveClipperTitle extends CustomClipper<Path> {
+class _FirstWaveClipperTitle extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     debugPrint(size.width.toString());
@@ -192,7 +245,7 @@ class FirstWaveClipperTitle extends CustomClipper<Path> {
   }
 }
 
-class SecondWaveClipperTitle extends CustomClipper<Path> {
+class _SecondWaveClipperTitle extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     debugPrint(size.width.toString());
