@@ -1,9 +1,9 @@
 # Bezier Curve Generator
 
 <p float="left">
-  <img src="/ss1.png" width="250" />
-  <img src="/ss2.png" width="250" /> 
-  <img src="/ss3.png" width="250" />
+  <img src="/ss1.jpg" width="250" />
+  <img src="/ss2.jpg" width="250" /> 
+  <img src="/ss3.jpg" width="250" />
 </p>
 
 A simple image generator of Bezier curves. 
