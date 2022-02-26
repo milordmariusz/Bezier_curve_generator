@@ -33,6 +33,7 @@ dependencies:
   flutter_colorpicker: ^1.0.3
   flutter_circle_color_picker: ^0.3.0
   flutter_neumorphic: ^3.0.3
+  auto_size_text: ^3.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

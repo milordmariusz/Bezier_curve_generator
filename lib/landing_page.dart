@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bezier_curve_generator/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -92,38 +93,38 @@ class _LandingPageState extends State<LandingPage> {
       ),
       Align(
         alignment: const Alignment(-0.75, -0.60),
-        child: Text(
+        child: AutoSizeText(
           "Bezier",
           style: GoogleFonts.raleway(
             decoration: TextDecoration.none,
             color: AppColors.textColor,
-            fontSize: 60,
-            //fontWeight: FontWeight.bold,
+            fontSize: MediaQuery.of(context).size.width/7,
           ),
+          maxFontSize: 60,
         ),
       ),
       Align(
-        alignment: const Alignment(0.75, -0.30),
-        child: Text(
+        alignment: const Alignment(0.75, -0.28),
+        child: AutoSizeText(
           "Curve",
           style: GoogleFonts.raleway(
             decoration: TextDecoration.none,
             color: AppColors.textColor,
-            fontSize: 60,
-            //fontWeight: FontWeight.bold,
+            fontSize: MediaQuery.of(context).size.width/7,
           ),
+          maxFontSize: 60,
         ),
       ),
       Align(
         alignment: const Alignment(-0.75, 0.01),
-        child: Text(
+        child: AutoSizeText(
           "Generator",
           style: GoogleFonts.raleway(
             decoration: TextDecoration.none,
             color: AppColors.textColor,
-            fontSize: 60,
-            //fontWeight: FontWeight.bold,
+            fontSize: MediaQuery.of(context).size.width/7,
           ),
+          maxFontSize: 60,
         ),
       ),
       Center(
@@ -131,41 +132,46 @@ class _LandingPageState extends State<LandingPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 400),
-            SizedBox(
-                height: 200,
-                width: 200,
-                child: NeumorphicButton(
-                  margin: const EdgeInsets.only(top: 12),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ColorPage()));
-                  },
-                  style: NeumorphicStyle(
-                    color: AppColors.whiteBackground,
-                    shape: NeumorphicShape.flat,
-                    depth: 10,
-                    intensity: 1,
-                    boxShape:
-                        NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Start",
-                        style: GoogleFonts.raleway(
-                          decoration: TextDecoration.none,
-                          color: AppColors.textColor,
-                          fontSize: 60,
-                          //fontWeight: FontWeight.bold,
+            SizedBox(height: MediaQuery.of(context).size.height/2),
+            Container(
+              constraints: BoxConstraints(
+                maxWidth: 200, maxHeight: 200
+              ),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.width/2,
+                  width: MediaQuery.of(context).size.width/2,
+                  child: NeumorphicButton(
+                    margin: const EdgeInsets.only(top: 12),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ColorPage()));
+                    },
+                    style: NeumorphicStyle(
+                      color: AppColors.whiteBackground,
+                      shape: NeumorphicShape.flat,
+                      depth: 10,
+                      intensity: 1,
+                      boxShape:
+                          NeumorphicBoxShape.roundRect(BorderRadius.circular(50)),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AutoSizeText(
+                          "Start",
+                          style: GoogleFonts.raleway(
+                            decoration: TextDecoration.none,
+                            color: AppColors.textColor,
+                            fontSize: MediaQuery.of(context).size.width/6,
+                          ),
+                          maxFontSize: 60,
                         ),
-                      ),
-                    ],
-                  ),
-                )),
+                      ],
+                    ),
+                  )),
+            ),
           ],
         ),
       ),
