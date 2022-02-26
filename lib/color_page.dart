@@ -73,8 +73,11 @@ class _ColorPageState extends State<ColorPage> {
       ),
       Center(
         child: Container(
-          height: size.height - 80,
-          width: 330,
+          height: size.height - size.height*0.1,
+          width: size.width - size.width*0.08,
+          constraints: BoxConstraints(
+              maxWidth: 330
+          ),
           decoration: BoxDecoration(
               color: Colors.grey[300],
               borderRadius: BorderRadius.circular(50),
@@ -109,18 +112,23 @@ class _ColorPageState extends State<ColorPage> {
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: SizedBox(
-                  width: 90,
-                  height: 90,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      _colorPickerDialog(color1, "color1");
-                    },
-                    style: NeumorphicStyle(
-                      color: color1,
-                      shape: NeumorphicShape.flat,
-                      intensity: 1,
-                      boxShape: const NeumorphicBoxShape.circle(),
+                child: Container(
+                  constraints: BoxConstraints(
+                      maxWidth: 90, maxHeight: 90
+                  ),
+                  child: SizedBox(
+                    width: size.width/4.5,
+                    height: size.width/4.5,
+                    child: NeumorphicButton(
+                      onPressed: () {
+                        _colorPickerDialog(color1, "color1");
+                      },
+                      style: NeumorphicStyle(
+                        color: color1,
+                        shape: NeumorphicShape.flat,
+                        intensity: 1,
+                        boxShape: const NeumorphicBoxShape.circle(),
+                      ),
                     ),
                   ),
                 ),
@@ -165,18 +173,23 @@ class _ColorPageState extends State<ColorPage> {
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: SizedBox(
-                  width: 90,
-                  height: 90,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      _colorPickerDialog(color2, "color2");
-                    },
-                    style: NeumorphicStyle(
-                      color: color2,
-                      shape: NeumorphicShape.flat,
-                      intensity: 1,
-                      boxShape: const NeumorphicBoxShape.circle(),
+                child: Container(
+                  constraints: BoxConstraints(
+                      maxWidth: 90, maxHeight: 90
+                  ),
+                  child: SizedBox(
+                    width: size.width/4.5,
+                    height: size.width/4.5,
+                    child: NeumorphicButton(
+                      onPressed: () {
+                        _colorPickerDialog(color2, "color2");
+                      },
+                      style: NeumorphicStyle(
+                        color: color2,
+                        shape: NeumorphicShape.flat,
+                        intensity: 1,
+                        boxShape: const NeumorphicBoxShape.circle(),
+                      ),
                     ),
                   ),
                 ),
@@ -220,18 +233,23 @@ class _ColorPageState extends State<ColorPage> {
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: SizedBox(
-                  width: 90,
-                  height: 90,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      _colorPickerDialog(color3, "color3");
-                    },
-                    style: NeumorphicStyle(
-                      color: color3,
-                      shape: NeumorphicShape.flat,
-                      intensity: 1,
-                      boxShape: const NeumorphicBoxShape.circle(),
+                child: Container(
+                  constraints: BoxConstraints(
+                      maxWidth: 90, maxHeight: 90
+                  ),
+                  child: SizedBox(
+                    width: size.width/4.5,
+                    height: size.width/4.5,
+                    child: NeumorphicButton(
+                      onPressed: () {
+                        _colorPickerDialog(color3, "color3");
+                      },
+                      style: NeumorphicStyle(
+                        color: color3,
+                        shape: NeumorphicShape.flat,
+                        intensity: 1,
+                        boxShape: const NeumorphicBoxShape.circle(),
+                      ),
                     ),
                   ),
                 ),
@@ -275,18 +293,23 @@ class _ColorPageState extends State<ColorPage> {
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: SizedBox(
-                  width: 90,
-                  height: 90,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      _colorPickerDialog(color4, "color4");
-                    },
-                    style: NeumorphicStyle(
-                      color: color4,
-                      shape: NeumorphicShape.flat,
-                      intensity: 1,
-                      boxShape: const NeumorphicBoxShape.circle(),
+                child: Container(
+                  constraints: BoxConstraints(
+                      maxWidth: 90, maxHeight: 90
+                  ),
+                  child: SizedBox(
+                    width: size.width/4.5,
+                    height: size.width/4.5,
+                    child: NeumorphicButton(
+                      onPressed: () {
+                        _colorPickerDialog(color4, "color4");
+                      },
+                      style: NeumorphicStyle(
+                        color: color4,
+                        shape: NeumorphicShape.flat,
+                        intensity: 1,
+                        boxShape: const NeumorphicBoxShape.circle(),
+                      ),
                     ),
                   ),
                 ),
@@ -331,18 +354,23 @@ class _ColorPageState extends State<ColorPage> {
                   depth: -20,
                   lightSource: LightSource.topLeft,
                 ),
-                child: SizedBox(
-                  width: 90,
-                  height: 90,
-                  child: NeumorphicButton(
-                    onPressed: () {
-                      _colorPickerDialog(color5, "color5");
-                    },
-                    style: NeumorphicStyle(
-                      color: color5,
-                      shape: NeumorphicShape.flat,
-                      intensity: 1,
-                      boxShape: const NeumorphicBoxShape.circle(),
+                child: Container(
+                  constraints: BoxConstraints(
+                      maxWidth: 90, maxHeight: 90
+                  ),
+                  child: SizedBox(
+                    width: size.width/4.5,
+                    height: size.width/4.5,
+                    child: NeumorphicButton(
+                      onPressed: () {
+                        _colorPickerDialog(color5, "color5");
+                      },
+                      style: NeumorphicStyle(
+                        color: color5,
+                        shape: NeumorphicShape.flat,
+                        intensity: 1,
+                        boxShape: const NeumorphicBoxShape.circle(),
+                      ),
                     ),
                   ),
                 ),
