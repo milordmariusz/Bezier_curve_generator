@@ -8,7 +8,6 @@
 
 A simple image generator of Bezier curves. 
 The generator accepts 5 colors from the user, which it then uses to create the image.
-In the future, I plan to add a dark theme and other ways to generate curves.
 
 To download the application to your phone (Android only),
 you just need to download and install the .apk file.
