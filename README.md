@@ -9,5 +9,4 @@
 A simple image generator of Bezier curves. 
 The generator accepts 5 colors from the user, which it then uses to create the image.
 
-To download the application to your phone (Android only),
-you just need to download and install the .apk file.
+Google Play: https://play.google.com/store/apps/details?id=com.milordmariusz.bezier_curve_generator
